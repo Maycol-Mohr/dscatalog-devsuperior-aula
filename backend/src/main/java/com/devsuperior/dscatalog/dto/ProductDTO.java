@@ -117,3 +117,4 @@ public class ProductDTO implements Serializable {
 		this.categories = categories;
 	}
 }
+ 
