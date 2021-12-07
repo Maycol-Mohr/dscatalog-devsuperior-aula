@@ -1,5 +1,5 @@
-import ProductCard from "components/ProductCard";
-import { Link } from "react-router-dom";
+import ProductCrudCard from 'pages/Admin/Products/ProductCrudCard';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -17,9 +17,13 @@ const List = () => {
             {
                 "id": 2,
                 "name": "Eletrônicos"
-            }
-        ]
-    }
+            },
+            {
+                "id": 1,
+                "name": "Computadores"
+            },
+        ],
+    };
 
     return (
         <>
@@ -31,13 +35,13 @@ const List = () => {
          </div>
          <div className="row">
             <div className="col-sm-6 col-md-12">
-              <ProductCard product={product} />
+              <ProductCrudCard product={product} />
             </div>
             <div className="col-sm-6 col-md-12">
-              <ProductCard product={product} />
+              <ProductCrudCard product={product} />
             </div>
             <div className="col-sm-6 col-md-12">
-              <ProductCard product={product} />
+              <ProductCrudCard product={product} />
             </div>
          </div>
         </>
