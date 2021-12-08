@@ -2,6 +2,7 @@ import { AxiosRequestConfig } from 'axios';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
+import Select from 'react-select';
 import { Product } from 'types/product';
 import { requestBackend } from 'util/requests';
 import './styles.css';
@@ -11,6 +12,13 @@ type UrlParams = {
 }
 
 const Form = () => {
+
+
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+      ]
 
     const { productId } = useParams<UrlParams>();
 
@@ -84,6 +92,18 @@ const Form = () => {
 
 
                         <div className="margin-bottom-30">
+                            <Select
+                                options={options}
+                                classNamePrefix="product-crud-select"
+                                isMulti
+                            />
+                            
+                        </div>
+
+
+
+
+                        <div className="margin-bottom-30">
                         <input
                          {...register('price', {
                          required: 'Campo obrigatorio',
@@ -93,8 +113,10 @@ const Form = () => {
                          placeholder="Preço"
                          name="price"
                         />
-                        <div className="invalid-feedback d-block">{errors.price?.message}</div>  
+                        <div className="invalid-feedback d-block">{errors.name?.message}</div>  
                         </div>
+
+
 
 
 
