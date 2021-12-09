@@ -52,12 +52,10 @@ const Form = () => {
 
     const onSubmit = (formData : Product) => {
 
-        const data = { ...formData, imgUrl: isEditing ? formData.imgUrl : "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/1-big.jpg", categories: isEditing ? formData.categories : [{id: 1, name: ""} ]}
-
         const config : AxiosRequestConfig = {
             method: isEditing ? 'PUT' : 'POST',
             url: isEditing ? `/products/${productId}` : '/products',
-            data,
+            data: formData,
             withCredentials: true
           };
 
@@ -82,8 +80,8 @@ const Form = () => {
                   
                   <div className="row product-crud-inputs-container">
                     <div className="col-lg-6 product-crud-inputs-left-container">
-                        <div className="margin-bottom-30">
                        
+                        <div className="margin-bottom-30">
                         <input
                          {...register('name', {
                          required: 'Campo obrigatorio',
@@ -136,6 +134,30 @@ const Form = () => {
                         />
                         <div className="invalid-feedback d-block">{errors.name?.message}</div>  
                         </div>
+
+
+
+
+                        <div className="margin-bottom-30">
+                        <input
+                         {...register('imgUrl', {
+                            required: 'Campo obrigatorio',
+                            pattern: {
+                              value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm,
+                              message: 'Deve ser uma Url válida'
+                            }
+                          })}
+                         type="text"
+                         className={`form-control base-input  ${errors.name ? 'is-invalid' : ''}`}
+                         placeholder="Url da imagem do produto"
+                         name="imgUrl"
+                        />
+                        <div className="invalid-feedback d-block">{errors.imgUrl?.message}</div>  
+                        </div>    
+
+
+
+
 
                     </div>
                     
