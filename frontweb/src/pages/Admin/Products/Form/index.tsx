@@ -96,7 +96,7 @@ const Form = () => {
                          required: 'Campo obrigatorio',
                          })}
                          type="text"
-                         className={`form-control base-input  ${errors.name ? 'is-invalid' : ''}`}
+                         className={`form-control base-input cor-branca  ${errors.name ? 'is-invalid' : ''}`}
                          placeholder="Nome do Produto"
                          name="name"
                         />
@@ -142,7 +142,7 @@ const Form = () => {
                                 render={({ field }) => (
                                    <CurrencyInput
                                      placeholder="Preço"
-                                     className={`form-control base-input  ${errors.name ? 'is-invalid' : ''}`}
+                                     className={`form-control base-input cor-branca  ${errors.name ? 'is-invalid' : ''}`}
                                      disableGroupSeparators={true}
                                      value={field.value}
                                      onValueChange={field.onChange}
@@ -170,7 +170,7 @@ const Form = () => {
                             }
                           })}
                          type="text"
-                         className={`form-control base-input  ${errors.name ? 'is-invalid' : ''}`}
+                         className={`form-control base-input cor-branca  ${errors.name ? 'is-invalid' : ''}`}
                          placeholder="Url da imagem do produto"
                          name="imgUrl"
                         />
@@ -190,7 +190,7 @@ const Form = () => {
                         {...register('description', {
                             required: 'Campo obrigatorio',
                             })}
-                            className={`form-control base-input h-auto ${errors.name ? 'is-invalid' : ''}`}
+                            className={`form-control base-input h-auto cor-branca ${errors.name ? 'is-invalid' : ''}`}
                             placeholder="Descrição"
                             name="description"  
                         />  
