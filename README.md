@@ -13,6 +13,7 @@ Back-end:
 - Postman
 - Testes TDD
 - JPA
+- Banco de dados: Postgresql
 
 Front-end:
 
