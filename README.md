@@ -12,6 +12,7 @@ Back-end:
 - Mavem
 - Postman
 - Testes TDD
+- JPA
 
 Front-end:
 
